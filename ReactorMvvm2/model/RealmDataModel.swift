@@ -25,9 +25,11 @@ class RealmDataModel{
     }
     
     public func wrtieDairy(diary: DiaryInfo){
-        if(!valNilCheck(val: diary._title) && !valNilCheck(val: diary._contents)){
+        if(valNilCheck(val: diary._title) && valNilCheck(val: diary._contents)){
+    
         try! realm.write{
             realm.add(diary)
+            
         }
         }
     }
